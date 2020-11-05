@@ -29,7 +29,7 @@ const OrderScreen = ({ match }) => {
     if (!order || order._id !== orderId) {
       dispatch(getOrderDetails(orderId));
     }
-  }, [order, orderId]);
+  }, [dispatch, order, orderId]);
 
   return loading ? (
     <Loader />
@@ -138,6 +138,14 @@ const OrderScreen = ({ match }) => {
                 <Row>
                   <Col>Total</Col>
                   <Col>${order.totalPrice}</Col>
+                </Row>
+              </ListGroup.Item>
+            </ListGroup>
+            {/* */}
+            <ListGroup>
+              <ListGroup.Item>
+                <Row>
+                  <Button>Hello</Button>
                 </Row>
               </ListGroup.Item>
             </ListGroup>
